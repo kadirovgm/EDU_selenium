@@ -1,25 +1,32 @@
 # Selenium + Python
 ## Study according attestation plan
 
-### Get started
+## Get started
 `requirements.txt` - file for saving packages
 
 `venv` - venv file
 
 `chromedriver` - selenium webdriver
 
-#### Create virtual environment
+### Create virtual environment
     $ python -m venv /path/to/new/venv
-#### Activate virtual environment
+### Activate virtual environment
     $ cd /path/to/new/venv
-#### In linux, macos:
+### In linux, macos:
     $ source venv/bin/activate
-#### In windows:
+### In windows:
     $ source venv/Lib/Activate.exe
 
-### Install selenium
+## Install selenium
     $ pip install selenium
 
-#### Save packages in requirements.txt
+### Save packages in requirements.txt
     $ pip freeze -> requirements.txt
+### Install packages from requirements.txt
+    $ pip install -r requirements.txt
+
+### Install chromederiver for selenium
+##### Download [Chromedriver](https://chromedriver.chromium.org/downloads) from official docs and `add into parent path`
+
+
     
