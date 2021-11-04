@@ -29,7 +29,7 @@
 ##### Download [Chromedriver](https://chromedriver.chromium.org/downloads) from official docs and `add into parent path`
 
 # Useful links
-### [CSS selectors]("https://github.com/kadirovgm/EDU_selenium/blob/master/stepik-course/css_selector.md")
+### [CSS selectors](https://github.com/kadirovgm/EDU_selenium/blob/master/stepik-course/css_selector.md)
 ### [Selenium education](https://github.com/kadirovgm/EDU_selenium/blob/master/stepik-course/selenium.md)
 
     
