@@ -8,7 +8,8 @@ time.sleep(5)
 # Метод get сообщает браузеру, что нужно открыть сайт по указанной ссылке
 driver.get("https://stepik.org/lesson/25969/step/12")
 time.sleep(5)
-# Метод find_element_by_css_selector позволяет найти нужный элемент на сайте, указав путь к нему. Способы поиска элементов мы обсудим позже
+# Метод find_element_by_css_selector позволяет найти нужный элемент на сайте,
+# указав путь к нему. Способы поиска элементов мы обсудим позже
 # Ищем поле для ввода текста
 textarea = driver.find_element_by_css_selector(".textarea")
 # Напишем текст ответа в найденное поле
@@ -22,7 +23,8 @@ time.sleep(5)
 # После выполнения всех действий мы должны не забыть закрыть окно браузера
 driver.quit()
 
-###### TRY FINALLY SAMPLE
+
+# TRY-FINALLY SAMPLE
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
 #

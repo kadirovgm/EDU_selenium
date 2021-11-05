@@ -2,10 +2,11 @@
 # robots_checked = robots_radio.get_attribute("checked")
 # assert robots_checked is None
 
-import selenium
+import math
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import math, time
 
 link = "http://suninjuly.github.io/get_attribute.html"
 
