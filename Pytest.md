@@ -15,4 +15,8 @@
 1. PyTest требуется устанавливать дополнительно, так как он не входит в стандартный пакет библиотек Python, в отличие от unittest. Нужно не забывать об этом, когда вы будете настраивать автоматический запуск тестов с помощью CI-сервера.
 2. Using PyTest requires a deeper understanding of Python to figure out how to apply fixtures, parameterization and other features of PyTest
 
+# [Useful commands for Pytest](https://gist.github.com/amatellanes/12136508b816469678c2)
 
+# Recommendations:
+#### For cleaner terminal executing:
+    $ pytest --tb=line -v
