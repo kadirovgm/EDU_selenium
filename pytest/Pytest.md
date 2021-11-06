@@ -17,6 +17,41 @@
 
 # [Useful commands for Pytest](https://gist.github.com/amatellanes/12136508b816469678c2)
 
+# [List of plagins](https://docs.pytest.org/en/latest/reference/plugin_list.html)
+
 # Recommendations:
 #### For cleaner terminal executing:
     $ pytest --tb=line -v
+
+# Useful links
+### Git
+1. https://learngitbranching.js.org/ — отличный интерактивный туториал
+2. https://git-scm.com/book/ru/v2/ — лучшая книга вообще 
+3. https://hyperskill.org/learn/topic/257/﻿
+4. https://stepik.org/course/4138/﻿
+5. http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/ru/index.html
+6. https://habr.com/company/intel/blog/344962/
+7. https://githowto.com/ru
+### Тестирование веб-приложений
+1. https://realpython.com/python-testing/ — инструменты для тестирования кода в Python
+2. [Пирамида тестов на практике](https://habr.com/ru/post/358950/)
+3. [unittest — документация](https://docs.python.org/3/library/unittest.html)
+### Тестирование с помощью PyTest
+1. [Статья про PyTest](https://habr.com/ru/post/269759/)
+3. [Документация PyTest](https://docs.pytest.org/en/latest/)
+4. [Conventions for Python test discovery](https://docs.pytest.org/en/stable/goodpractices.html)
+5. [Полезные флаги pytest](https://gist.github.com/amatellanes/12136508b816469678c2)
+### Использование фикстур в PyTest
+7. [Фикстуры — определение](https://en.wikipedia.org/wiki/Test_fixture#Software)
+8. [Фикстуры в PyTest](https://docs.pytest.org/en/stable/fixture.html)
+9. [setup и teardown методы](https://docs.pytest.org/en/stable/xunit_setup.html)
+10. https://habr.com/ru/company/yandex/blog/242795/
+11. https://medium.com/@dmrlx/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-pytest-cc6175c7d0dc
+12. [Skip and xfail: dealing with tests that cannot succeed](https://pytest.org/en/stable/skipping.html)
+### Параметризация, конфигурирование, плагины
+14. [Parametrizing fixtures and test functions](https://selenium-python.com/install-geckodriver)
+15. [Инструкции по установке geckodriver](https://selenium-python.com/install-geckodriver)
+16. [Передача параметров в PyTest из командной строки](https://docs.pytest.org/en/stable/example/simple.html?highlight=addoption)
+17. [Список плагинов PyTest](https://docs.pytest.org/en/stable/plugins.html)
+18. [Полный список доступных плагинов с описаниями](https://plugincompat.herokuapp.com/)
+19. [Настройка вывода PyTest](https://docs.pytest.org/en/stable/usage.html#modifying-python-traceback-printing)

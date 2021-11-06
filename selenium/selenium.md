@@ -28,7 +28,7 @@
 `find_element_by_id` - searching by elm unique id 
 `find_element_by_css_selector` - searching by css selector
 `find_element_by_xpath` - search by elm xpath
-`find_element_by_name` — search ny attribute name
+`find_element_by_name` — search ny attribute 'name'
 `find_element_by_tag_name` — search elm by tag;
 `find_element_by_class_name` — search elm by attribute class;
 `find_element_by_link_text` — searching a link in web page;
