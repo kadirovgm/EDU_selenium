@@ -29,8 +29,8 @@
 ##### Download [Chromedriver](https://chromedriver.chromium.org/downloads) from official docs and `add into parent path`
 
 # Useful links
-### [CSS selectors](https://github.com/kadirovgm/EDU_selenium/blob/master/stepik-course/css_selector.md)
-### [Selenium education](https://github.com/kadirovgm/EDU_selenium/blob/master/stepik-course/selenium.md)
+### [CSS selectors](https://github.com/kadirovgm/EDU_selenium/blob/master/css_selector.md)
+### [Selenium education](https://github.com/kadirovgm/EDU_selenium/blob/master/selenium.md)
 
 # Another useful links from Stepik course 
 ### Common
@@ -45,7 +45,7 @@
 ### Ожидания в Selenium WebDriver
 
 1. https://docs.seleniumhq.org/docs/04_webdriver_advanced.jsp
-2. https://selenium-python.readthedocs.io/waits.html﻿
+2. https://selenium-python.readthedocs.io/waits.html
 3. https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.support.expected_condition...﻿
 4. https://stackoverflow.com/questions/15122864/selenium-wait-until-document-is-ready
 5. https://blog.codeship.com/get-selenium-to-wait-for-page-load/
