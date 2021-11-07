@@ -32,9 +32,3 @@ class ProductPageLocators:
 class BasketPageLocators:
     BASKET_EMPTY_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
     BASKET_ELM = (By.XPATH, "/html/body/div[2]/div/div[3]/div[2]/form/div/div")
-
-
-
-
-
-

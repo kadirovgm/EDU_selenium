@@ -40,7 +40,7 @@ class TestLoginFromMainPage:
     def test_guest_can_go_to_login_page(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer"
         page = MainPage(browser, link)  # (base_page) инициализируем Page Object
-        page.open() # base_page
+        page.open()  # base_page
         page.go_to_login_page()  # (base_page)
         # проверки на login_page
         login_page = LoginPage(browser, browser.current_url)
@@ -74,5 +74,3 @@ class TestLoginFromMainPage:
 #     def test_guest_should_see_login_link(self, browser):
 #         page = ProductPage(browser, self.link)
 #         # дальше обычная реализация теста
-
-

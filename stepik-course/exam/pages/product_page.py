@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.common.exceptions import NoAlertPresentException # в начале файла
+from selenium.common.exceptions import NoAlertPresentException  # в начале файла
 
 import math
 
@@ -29,7 +29,7 @@ class ProductPage(BasePage):
         # првоеряем что правильная книга была добавлена в корзину
         message_book_name = self.browser.find_element(*ProductPageLocators.MESSAGE_AFTER_ADDING).text
         book = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
-        print("print book name:"+str(book))
+        print("print book name:" + str(book))
         print("print message:" + str(message_book_name))
 
         assert str(book) == str(message_book_name), "Incorrect book was added to baket!"
@@ -51,7 +51,3 @@ class ProductPage(BasePage):
     def should_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message appeared, but should disappeare"
-
-
-
-

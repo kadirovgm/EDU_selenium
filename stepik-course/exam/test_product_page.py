@@ -38,6 +38,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.click_to_add_basket()  # add to basket
     page.should_not_be_success_message()
 
+
 # Открываем страницу товара
 # Проверяем, что нет сообщения об успехе с помощью is_not_element_present
 @pytest.mark.skip
@@ -46,6 +47,7 @@ def test_guest_cant_see_success_message(browser):
     page = ProductPage(browser, link)
     page.open()  # open Tovar page
     page.should_not_be_success_message()
+
 
 # Открываем страницу товара
 # Добавляем товар в корзину
@@ -75,6 +77,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
+
 
 # можно увидеть продукты которые находятся в корзине из main page
 # 1. Гость открывает главную страницу
@@ -108,7 +111,3 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
 #         page.solve_quiz_and_get_code()  # solve quiz and get code
 #         page.expected_book_name()
 #         page.expected_book_cost()
-
-
-
-
