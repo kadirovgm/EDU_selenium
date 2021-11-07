@@ -10,8 +10,12 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     ADD_BASKET = (By.CSS_SELECTOR, "#add_to_basket_form > button")
-    MESSAGE_AFTER_ADDING = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div > strong")
-    BOOK_NAME = (By.CSS_SELECTOR, "#content_inner > article > div.row > div.col-sm-6.product_main > h1")
+
+    MESSAGE_AFTER_ADDING = (By.XPATH, "/html/body/div[2]/div/div[1]/div[1]/div/strong")
+    BOOK_NAME = (By.XPATH, "/html/body/div[2]/div/div[2]/div[2]/article/div[1]/div[2]/h1")
 
     COST_BUSKET = (By.XPATH, "/html/body/div[2]/div/div[1]/div[3]/div/p[1]/strong")
     COST_BOOK = (By.XPATH, "/html/body/div[2]/div/div[2]/div[2]/article/div[1]/div[2]/p[1]")
+
+    SUCCESS_MESSAGE = (By.XPATH, "/html/body/div[2]/div/div[1]/div[1]/div")
+
