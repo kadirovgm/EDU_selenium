@@ -12,6 +12,10 @@ class MainPage(BasePage):
         # переход на страницу логина (переход по ссылке, переход между страницами)
         # return LoginPage(browser=self.browser, url=self.browser.current_url)  # (browser, link)
 
+        # обработка alerts (Инкапсуляция бизнес логики)
+        # alert = self.browser.switch_to.alert
+        # alert.accept()
+
     def should_be_login_link(self):
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
 
