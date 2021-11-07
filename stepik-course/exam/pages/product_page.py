@@ -24,7 +24,16 @@ class ProductPage(BasePage):
         except NoAlertPresentException:
             print("No second alert presented")
 
-    def expected_result_after_busket(self):
-        message = self.browser.find_element(*ProductPageLocators.MESSAGE_AFTER_ADDING)
+    def expected_book_name(self):
+        # првоеряем что правильная книга была добавлена в корзину
+        message_book_name = self.browser.find_element(*ProductPageLocators.MESSAGE_AFTER_ADDING)
         book = self.browser.find_element(*ProductPageLocators.BOOK_NAME)
-        assert book in message, "Incorrect book was added to baket!"
+        assert str(book) in str(message_book_name), "Incorrect book was added to baket!"
+
+    def expected_book_cost(self):
+        # проверяем что стоитмость корзины совпадает с ценой товара
+        cost_book = self.browser.find_element(*ProductPageLocators.COST_BOOK)
+        cost_busket = self.browser.find_element(*ProductPageLocators.COST_BUSKET)
+        assert str(cost_book) == str(cost_busket), "Incorrect cost of book"
+
+

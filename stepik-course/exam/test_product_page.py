@@ -14,9 +14,12 @@ import time
 #                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
 #                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
 def test_basket_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/?promo=newYear2019"
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/?promo=newYear"
     page = ProductPage(browser, link)
     page.open()  # open Tovar page
     page.click_to_add_basket()  # add to basket
     page.solve_quiz_and_get_code()  # solve quiz and get code
+    page.expected_book_name()
+    page.expected_book_cost()
     time.sleep(50)
+
