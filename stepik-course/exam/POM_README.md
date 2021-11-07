@@ -15,7 +15,7 @@
 4. добавляем проверки, которые создавали методами в main_page.py
 
 
-# Пример корректного кейса по ООП:
+# Пример корректного кейса по ООП включая API тесты:
     @pytest.mark.login
     class TestLoginFromProductPage():
         @pytest.fixture(scope="function", autouse=True)
