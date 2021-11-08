@@ -31,7 +31,6 @@ class ProductPage(BasePage):
         book = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
         print("print book name:" + str(book))
         print("print message:" + str(message_book_name))
-
         assert str(book) == str(message_book_name), "Incorrect book was added to baket!"
 
     def expected_book_cost(self):

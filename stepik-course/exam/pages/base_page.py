@@ -6,16 +6,17 @@ from .locators import BasePageLocators
 
 
 class BasePage:
-
+    # constructor for BasePage
     def __init__(self, browser, url, timeout=5):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    # Open browser
     def open(self):
         self.browser.get(self.url)
 
-    # абстрактный метод для ожидания появления элемента
+    # abstract method for waiting for an `element to appear`
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
@@ -23,7 +24,7 @@ class BasePage:
             return False
         return True
 
-    # абстрактный метод для ожидания НЕ появления элемента на странице
+    # abstract method for waiting for an `element NOT to appear`
     def is_not_element_present(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
@@ -31,7 +32,7 @@ class BasePage:
             return True
         return False
 
-    # абстракнтый метод для проверки что какой то элемент исчезает
+    # an abstract method for checking that element disappears
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException). \
@@ -40,7 +41,7 @@ class BasePage:
             return False
         return True
 
-    # Общие действия со всех страниц
+    # COMMON ACTIONS FROM ALL PAGES
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
@@ -52,7 +53,7 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         link.click()
 
-    # проверка, что пользователь авторизован
+    # checking that user is authorized
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
