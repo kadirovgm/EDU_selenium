@@ -1,6 +1,7 @@
 # pytest -v -s --tb=line --language=en test_product_page.py
 from pages.product_page import ProductPage
 from pages.basket_page import BasketPage
+from pages.login_page import LoginPage
 import pytest
 import time
 
@@ -94,20 +95,37 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page.should_be_empty_basket()
     # page.should_have_basket_empty_message()
 
-### Остановился тут!!!
-# class TestUserAddToBasketFromProductPage:
-#
-#     def test_user_cant_see_success_message(self, browser):
-#         link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/"
-#         page = ProductPage(browser, link)
-#         page.open()  # open Tovar page
-#         page.should_not_be_success_message()
-#
-#     def test_user_can_add_product_to_basket(self, browser):
-#         link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/?promo=newYear"
-#         page = ProductPage(browser, link)
-#         page.open()  # open Tovar page
-#         page.click_to_add_basket()  # add to basket
-#         page.solve_quiz_and_get_code()  # solve quiz and get code
-#         page.expected_book_name()
-#         page.expected_book_cost()
+@pytest.mark.login
+class TestUserAddToBasketFromProductPage:
+
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self):
+        self.product = ProductFactory(title="Best book created by robot")
+        # создаем по апи
+        self.link = self.product.link
+        yield
+        # после этого ключевого слова начинается teardown
+        # выполнится после каждого теста в классе
+        # удаляем те данные, которые мы создали
+        self.product.delete()
+
+    def test_user_cant_see_success_message(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/"
+        page = LoginPage(browser, link)
+        page.open()  # open Tovar page
+        email = str(time.time()) + "@fakemail.org"
+        password = "Qaz12345P"
+        page.register_new_user(email, password)
+        page.should_not_be_success_message()
+
+    def test_user_can_add_product_to_basket(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+        page = ProductPage(browser, link)
+        page.open()  # open Tovar page
+        email = str(time.time()) + "@fakemail.org"
+        password = "Qaz12345P"
+        page.register_new_user(email, password) ## правильно ли что не в LoginPage? проверить
+        page.click_to_add_basket()  # add to basket
+        page.solve_quiz_and_get_code()  # solve quiz and get code
+        page.expected_book_name()
+        page.expected_book_cost()
