@@ -9,15 +9,15 @@ class LoginPage(BasePage):
     def login_new_user(self):
         number = "79297285880"
         password = "Poi98980"
-        self.go_to_login_page()
-        self.should_be_login_page()
-        self.fill_login_form(number, password)
-        time.sleep(1)
-        self.should_be_authorized_user()
+        self.go_to_login_page()                     # 1. Go to login link
+        self.should_be_login_page()                 # 2. Check for login modal
+        self.fill_login_form(number, password)      # 3. Fill login form
+        time.sleep(1)                               # 4. Waiting for loading [Add implicitly wait here]
+        self.should_be_authorized_user()            # 5. Checking for authorized
 
     def should_be_login_page(self):
-        self.should_be_login_form()
-        self.should_be_login_form_name()
+        self.should_be_login_form()                 # 1. Checking for login form attributes
+        self.should_be_login_form_name()            # 2. Checking for correct name
 
     def should_be_login_url(self):
         assert self.browser.current_url in self.url, "Incorrect URL!"

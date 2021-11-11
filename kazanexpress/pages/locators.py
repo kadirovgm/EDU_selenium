@@ -33,9 +33,17 @@ class LoginPageLocators:
     LOGIN_REGISTER_LINK = (By.XPATH, "/html/body/main/div[2]/div[5]/div/footer/span/button")
 
 
+class FavoritesPageLocators:
+    FAVORITE_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/a/div")
+    FAVORITE_EMPTY_MES = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div/div/span")
+    FAVORITE_EMPTY_MES_ADD = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div/div/p")
+
 
 class BasketPageLocators:
-    ...
+    BASKET_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]")
+    BASKET_EMPTY_MES = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div/div/div/span")
+    BASKET_EMPTY_MES_ASS = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div/div/div/p/text()[1]")
+
 
 
 class ProductPageLocators:
