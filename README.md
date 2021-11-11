@@ -15,7 +15,7 @@
 ### In linux, macos:
     $ source venv/bin/activate
 ### In windows:
-    $ source venv/Scripts/Activate.exe
+    $ source .\venv\Scripts\activate
 
 ## Install selenium
     $ pip install selenium
