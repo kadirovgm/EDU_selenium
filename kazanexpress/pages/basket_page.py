@@ -21,4 +21,4 @@ class BasketPage(BasePage):
 
     def should_present_message_no_basket_elm(self):
         assert "Здесь пусто :(" == self.browser.find_element(*BasketPageLocators.BASKET_EMPTY_MES).text
-        assert "В Корзину ничего не добавлено" == self.browser.find_element(*BasketPageLocators.BASKET_EMPTY_MES_ASS).text
+        # assert "В Корзину ничего не добавлено" == self.browser.find_element(*BasketPageLocators.BASKET_EMPTY_MES_ADD).text

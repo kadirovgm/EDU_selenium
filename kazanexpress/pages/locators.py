@@ -40,9 +40,9 @@ class FavoritesPageLocators:
 
 
 class BasketPageLocators:
-    BASKET_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]")
-    BASKET_EMPTY_MES = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div/div/div/span")
-    BASKET_EMPTY_MES_ASS = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div/div/div/p/text()[1]")
+    BASKET_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div/div[2]/div")
+    BASKET_EMPTY_MES = (By.XPATH, "//span[@data-test-id='text__empty']")
+    BASKET_EMPTY_MES_ADD = (By.CSS_SELECTOR, ".slightly.transparent.regular.hug")
 
 
 

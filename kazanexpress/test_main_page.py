@@ -7,8 +7,10 @@ from pages.basket_page import BasketPage
 
 LINK_MAIN_PAGE = "https://kazanexpress.ru/"
 
+
 @pytest.mark.need_review
 class TestGuestCanUseHeader:
+
     def test_guest_can_login(self, browser):
         link = LINK_MAIN_PAGE
         page = MainPage(browser, link)
@@ -29,18 +31,6 @@ class TestGuestCanUseHeader:
         page.open()                                                     # 1. Open main page
         basket_page = BasketPage(browser, browser.current_url)          # 2. Initialize FavoritePage POM
         basket_page.should_be_empty_basket()                            # 3. Go to basket, chek it for empty
-
-
-
-@pytest.mark.skip
-def test_guest_can_login(self, browser):
-    link = LINK_MAIN_PAGE
-    page = MainPage(browser, link)
-    page.open()  # base_page
-    page.go_to_login_page()  # (base_page)
-    # проверки на login_page
-    login_page = LoginPage(browser, browser.current_url)
-    login_page.should_be_login_page()  # login_page
 
 
 @pytest.mark.skip
