@@ -19,7 +19,10 @@ class BasePageLocators:
 
 
 class MainPageLocators:
-    ...
+    FAV_ICON_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[1]/button/img")
+    FAV_ICON_SELECTED=(By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[1]/button")
+    PRODUCT_NAME = (By.XPATH,"/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[2]/div[1]/span")
+
 
 
 class LoginPageLocators:
@@ -37,6 +40,8 @@ class FavoritesPageLocators:
     FAVORITE_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/a/div")
     FAVORITE_EMPTY_MES = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div/div/span")
     FAVORITE_EMPTY_MES_ADD = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div/div/p")
+    FAVORITE_PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]"
+                                       "/div/div/div[1]/a/div/div[2]/div[1]/span")
 
 
 class BasketPageLocators:

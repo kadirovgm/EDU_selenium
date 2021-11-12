@@ -1,5 +1,5 @@
 import pytest
-
+import time
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from pages.favorites_page import FavoritesPage
@@ -9,6 +9,7 @@ LINK_MAIN_PAGE = "https://kazanexpress.ru/"
 
 
 @pytest.mark.need_review
+@pytest.mark.skip
 class TestGuestCanUseHeader:
 
     def test_guest_can_login(self, browser):
@@ -33,23 +34,23 @@ class TestGuestCanUseHeader:
         basket_page.should_be_empty_basket()                            # 3. Go to basket, chek it for empty
 
 
+@pytest.mark.need_review
 @pytest.mark.skip
 class TestUserAddToBasketFromMainPage:
 
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
-        number = "79297285880"
-        password = "Poi98980"
-        self.page.go_to_login_page()
+        link = LINK_MAIN_PAGE
         self.page = LoginPage(browser, link)
         self.page.open()
-        self.page.register_new_user(email, password)
+        self.page.login_new_user()
 
-    def test_user_can_add_product_to_basket(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-shellcoders-handbook_209/?promo=newYear"
-        page = ProductPage(browser, link)
-        page.open()  # base_page                                     # 3. Open page
-        page.click_to_add_basket()  # product_page                   # 4. Add to basket
-        page.solve_quiz_and_get_code()  # product_page               # 5. Solve quize
-        page.expected_book_name()  # product_page                    # 6. Correct book name
-        page.expected_book_cost()  # product_page
+    def test_user_can_add_product_to_favorites(self, browser):
+        link = LINK_MAIN_PAGE
+        page = MainPage(browser, link)
+        page.open()
+        page.click_to_add_to_favorites()                                    # 1. Click to add to favorites
+        favorite_product_name = page.remember_favorite_product_name()       # 2. remember favorite product name
+        page.go_to_favorites()                                              # 2. Go to favorites
+        page_favorites = FavoritesPage(browser, browser.current_url)        # 3. Initialize Favorites POM
+        page_favorites.should_have_favorite_product(favorite_product_name)  # 6. Checking for correct favorite product
