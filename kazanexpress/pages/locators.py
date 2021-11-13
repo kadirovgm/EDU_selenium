@@ -75,6 +75,9 @@ class ProductPageLocators:
                                       "/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]")
     PRODUCT_COLOR_SELECT_CHECK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                             "/div[1]/div[2]/div[2]/div/div[1]/span[2]")
+    PRODUCT_SIZE_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]")
+    PRODUCT_SIZE_SELECT = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]"
+                                     "/div[2]/div[2]/div[2]/div/div[1]")
     PRODUCT_COUNT_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[3]")
     PRODUCT_COUNT_BLOCK_PLUS = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                           "/div[1]/div[2]/div[3]/div[2]/div[1]/div/div/button")

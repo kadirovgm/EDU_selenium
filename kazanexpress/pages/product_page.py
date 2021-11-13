@@ -46,7 +46,16 @@ class ProductPage(BasePage):
         else:
             print("Color block does not exist!")
 
-    """Checking for count block"""
+    """Checking for size block"""
+    def is_size_block_exist(self):
+        if self.is_element_present(*ProductPageLocators.PRODUCT_SIZE_BLOCK):
+            print("Size block exist!")
+            select_size = self.browser.find_element(*ProductPageLocators.PRODUCT_SIZE_SELECT)
+            select_size.click()
+        else:
+            print("Size block does not exist")
+
+    """Checking for count block (required block)"""
     def is_count_block_exist(self):
         if self.is_element_present(*ProductPageLocators.PRODUCT_COUNT_BLOCK):
             print("Count block exist!")
