@@ -57,6 +57,12 @@ class BasketPageLocators:
     BASKET_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div/div[2]/div")
     BASKET_EMPTY_MES = (By.XPATH, "//span[@data-test-id='text__empty']")
     BASKET_EMPTY_MES_ADD = (By.CSS_SELECTOR, ".slightly.transparent.regular.hug")
+    BASKET_ELM_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]"
+                                 "/div[2]/div[3]/div/div[2]/div/div[2]/div[1]/a")
+    BASKET_ELM_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div[6]/div[2]/span")
+    REMOVE_BUTTON = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]"
+                               "/div[3]/div/div[2]/div/div[2]/div[2]/button")
+
 
 
 class ProductPageLocators:
@@ -72,6 +78,8 @@ class ProductPageLocators:
     PRODUCT_COUNT_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[3]")
     PRODUCT_COUNT_BLOCK_PLUS = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                           "/div[1]/div[2]/div[3]/div[2]/div[1]/div/div/button")
+    PRODUCT_ADD_TO_BASKET = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
+                                       "/div[1]/div[2]/div[5]/div/div/div[1]/button")
 
 
 

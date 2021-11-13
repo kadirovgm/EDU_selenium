@@ -60,9 +60,25 @@ class ProductPage(BasePage):
         price_old = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text[:-2].replace(' ', '')
         add_count = self.browser.find_element(*ProductPageLocators.PRODUCT_COUNT_BLOCK_PLUS)
         click_count = click_to_plus_button(add_count)
-        print("CLICK = " + str(click_count))
         price_new = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text[:-2].replace(' ', '')
         print("PRICE OLD = " + str(price_old))
         print("PRICE NEW = " + str(price_new))
         actual_click_count = click_count + 1
+        print("CLICK = " + str(actual_click_count))
         assert int(price_new) == int(price_old) * actual_click_count, "Incorrect final sum after adding count"
+
+    """Add to basket"""
+    def click_to_add_to_basket(self):
+        if self.is_element_present(*ProductPageLocators.PRODUCT_ADD_TO_BASKET):
+            add_button = self.browser.find_element(*ProductPageLocators.PRODUCT_ADD_TO_BASKET)
+            add_button.click()
+        else:
+            assert "Can't find add to basket button, try to check that blocks are filled!"
+
+    """Remember Price and Name of Product"""
+    def remember_name_price_of_product(self):
+        name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
+        price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
+        return name, price
+
+
