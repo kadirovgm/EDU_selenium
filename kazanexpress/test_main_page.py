@@ -37,8 +37,8 @@ class TestGuestCanUseHeader:
 
 
 @pytest.mark.need_review
-
-class TestUserAddToBasketFromMainPage:
+@pytest.mark.skip
+class TestUserAddToFavoritesFromMainPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         link = LINK_MAIN_PAGE
@@ -68,14 +68,17 @@ class TestUserCanSeeLastSeeingProduct:
         self.page.login_new_user()
 
     def test_user_can_see_last_product_in_favorites(self, browser):
-        page_main = MainPage(browser, browser.current_url)
-        remembered_product_name = page_main.remember_product_name()
-        remembered_product_price = page_main.remember_product_price()
-        page_main.click_to_product()
-        time.sleep(3)
-        page_product = ProductPage(browser, browser.current_url)
-        page_product.should_have_chosen_product(remembered_product_name, remembered_product_price)
-
+        page_main = MainPage(browser, browser.current_url)                  # 1. POM main_page
+        remembered_product_name = page_main.remember_product_name()         # 2. Remember name of product
+        remembered_product_price = page_main.remember_product_price()       # 3. Remember price of product
+        page_main.click_to_product()                                        # 4. Go to Product page
+        page_product = ProductPage(browser, browser.current_url)            # 5. POM product_page
+        page_product.should_have_chosen_product\
+            (remembered_product_name, remembered_product_price)             # 6. Checking for correct product
+        self.page.go_to_favorites()                                         # 7. Go to favorites
+        page_favorites = FavoritesPage(browser, browser.current_url)        # 8. POM favorites_page
+        page_favorites.should_be_suggestions_down_of_favorites\
+            (remembered_product_name, remembered_product_price)             # 9. Checking for having early clicked product in favorite's suggestions
 
     # def test_user_can_see_last_product_in_basket(self, browser):
     #     ...

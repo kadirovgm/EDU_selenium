@@ -8,9 +8,7 @@ class BasePageLocators:
                                      "div.middle-header.row.center.between-mbs.middle-mbs.noselect > "
                                      "div.store-action-buttons > "
                                      "a.action-button.slightly.regular.exact-active-link.active-link")
-    FAVORITES_LINK = (By.CSS_SELECTOR, "#main-page > div.sticky-footer > header > div:nth-child(1) > "
-                                       "div.middle-header.row.center.between-mbs.middle-mbs.noselect > "
-                                       "div.store-action-buttons > a:nth-child(2)")
+    FAVORITES_LINK = (By.XPATH, "/html/body/main/div[2]/header/div[1]/div[1]/div[3]/a[2]")
     BASKET_LINK = (By.CSS_SELECTOR, "#cart-button")
     LOGO_LINK = (By.CSS_SELECTOR, "#main-page > div.sticky-footer > header > div:nth-child(1) > "
                                   "div.middle-header.row.center.between-mbs.middle-mbs.noselect > "
@@ -26,8 +24,6 @@ class MainPageLocators:
     PRODUCT_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div"
                                "/div/div[1]/a/div/div[2]/div[4]/div/span[1]/span")
     PRODUCT_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]")
-
-
 
 class LoginPageLocators:
     """LOGIN FORM"""
@@ -47,6 +43,11 @@ class FavoritesPageLocators:
     FAVORITE_PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]"
                                        "/div/div/div[1]/a/div/div[2]/div[1]/span")
     FAVORITE_ICON = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/a/div/div[1]/button")
+    SUGGESTION_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[2]/section/div/div/div/div/div/div[1]/div/a")
+    SUGGESTION_ELM_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[2]/section/div/div/div/div"
+                                     "/div/div[1]/div/a/div/div[2]/div[1]/span")
+    SUGGESTION_ELM_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div[2]/section/div/div/div/div"
+                                      "/div/div[1]/div/a/div/div[2]/div[4]/div/span[1]/span")
 
 
 class BasketPageLocators:

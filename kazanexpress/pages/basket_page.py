@@ -8,8 +8,7 @@ class BasketPage(BasePage):
     def __init__(self, *args, **kwargs):
         super(BasketPage, self).__init__(*args, **kwargs)
 
-        # Expectation that there is nothing in favorites (waiting for 3 sek)
-
+    """Should be empty basket"""
     def should_be_empty_basket(self):
         self.go_to_basket_page()
         self.should_be_no_element()

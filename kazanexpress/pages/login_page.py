@@ -6,6 +6,7 @@ import time
 
 class LoginPage(BasePage):
 
+    """Login user"""
     def login_new_user(self):
         number = "79297285880"
         password = "Poi98980"
@@ -15,6 +16,7 @@ class LoginPage(BasePage):
         time.sleep(1)                               # 4. Waiting for loading [Add implicitly wait here]
         self.should_be_authorized_user()            # 5. Checking for authorized
 
+    """Checking for correct login form"""
     def should_be_login_page(self):
         self.should_be_login_form()                 # 1. Checking for login form attributes
         self.should_be_login_form_name()            # 2. Checking for correct name
