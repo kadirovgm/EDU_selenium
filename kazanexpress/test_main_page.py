@@ -37,7 +37,6 @@ class TestGuestCanUseHeader:
 @pytest.mark.need_review
 @pytest.mark.skip
 class TestUserAddToBasketFromMainPage:
-
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         link = LINK_MAIN_PAGE
@@ -46,11 +45,26 @@ class TestUserAddToBasketFromMainPage:
         self.page.login_new_user()
 
     def test_user_can_add_product_to_favorites(self, browser):
+        page_main = MainPage(browser, browser.current_url)
+        page_main.click_to_add_to_favorites()                               # 1. Click to add to favorites
+        favorite_product_name = page_main.remember_favorite_product_name()  # 2. remember favorite product name
+        page_main.go_to_favorites()                                         # 3. Go to favorites
+        page_favorites = FavoritesPage(browser, browser.current_url)        # 4. Initialize Favorites POM
+        page_favorites.should_have_favorite_product(favorite_product_name)  # 5. Checking for correct favorite product
+
+@pytest.mark.skip
+class TestUserCanSeeLastSeeingProduct:
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self, browser):
         link = LINK_MAIN_PAGE
-        page = MainPage(browser, link)
-        page.open()
-        page.click_to_add_to_favorites()                                    # 1. Click to add to favorites
-        favorite_product_name = page.remember_favorite_product_name()       # 2. remember favorite product name
-        page.go_to_favorites()                                              # 2. Go to favorites
-        page_favorites = FavoritesPage(browser, browser.current_url)        # 3. Initialize Favorites POM
-        page_favorites.should_have_favorite_product(favorite_product_name)  # 6. Checking for correct favorite product
+        self.page = LoginPage(browser, link)
+        self.page.open()
+        self.page.login_new_user()
+
+    def test_user_can_see_last_product_in_favorites(self, browser):
+        ...
+
+    def test_user_can_see_last_product_in_basket(self, browser):
+        ...
+
+

@@ -31,7 +31,6 @@ class FavoritesPage(BasePage):
     def should_have_correct_name_of_favorite_product(self, product_name_from_main_page):
         product_name_in_favorites = self.browser.find_element(*FavoritesPageLocators.FAVORITE_PRODUCT_NAME)
         product_name_in_favorites_text = product_name_in_favorites.text
-        print("OUTPUT: FAVORITE PRODUCT NAME IS" + str(product_name_in_favorites_text))
-
+        print("FAVORITE PRODUCT NAME IS " + str(product_name_in_favorites_text))
         assert product_name_in_favorites_text == product_name_from_main_page, \
             "Incorrect favorite product name"

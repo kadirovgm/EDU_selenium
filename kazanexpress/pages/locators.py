@@ -19,9 +19,10 @@ class BasePageLocators:
 
 
 class MainPageLocators:
-    FAV_ICON_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[1]/button/img")
-    FAV_ICON_SELECTED=(By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[1]/button")
-    PRODUCT_NAME = (By.XPATH,"/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[2]/div[1]/span")
+    FAV_ICON_ELM = (By.CSS_SELECTOR, "#section-express-content > div > div:nth-child(1) > a > div > "
+                                     "div.product-card-image.noselect > button > img")
+    FAV_ICON_SELECTED = (By.CSS_SELECTOR, ".noselect.product-card-like.liked")
+    PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[2]/div[1]/span")
 
 
 
