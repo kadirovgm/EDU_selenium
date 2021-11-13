@@ -57,9 +57,9 @@ class BasketPageLocators:
     BASKET_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div/div[2]/div")
     BASKET_EMPTY_MES = (By.XPATH, "//span[@data-test-id='text__empty']")
     BASKET_EMPTY_MES_ADD = (By.CSS_SELECTOR, ".slightly.transparent.regular.hug")
-    BASKET_ELM_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]"
-                                 "/div[2]/div[3]/div/div[2]/div/div[2]/div[1]/a")
-    BASKET_ELM_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[2]/div/div/div[6]/div[2]/span")
+    BASKET_ELM_NAME = (By.CSS_SELECTOR, "#cart-products-container > div.cart-products-list.new-shadow > div.cart-item > div > div:nth-child(2) > div > div.info-container > div.product-title > a")
+    BASKET_ELM_PRICE = (By.CSS_SELECTOR, "#cart-sum > div > div > div.summary-fullprice "
+                                         "> div.summary-fullprice-value > span")
     REMOVE_BUTTON = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]"
                                "/div[3]/div/div[2]/div/div[2]/div[2]/button")
 
@@ -71,13 +71,11 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                "/div[1]/div[2]/div[4]/div[2]/div[1]/span")
     PRODUCT_COLOR_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div")
-    PRODUCT_COLOR_SELECT = (By.XPATH, "/html/body/main/div[2]/div[2]"
-                                      "/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]")
+    PRODUCT_COLOR_SELECT = (By.CSS_SELECTOR, ".radio-item.regular.image:not(.disabled)")
     PRODUCT_COLOR_SELECT_CHECK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                             "/div[1]/div[2]/div[2]/div/div[1]/span[2]")
     PRODUCT_SIZE_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]")
-    PRODUCT_SIZE_SELECT = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]"
-                                     "/div[2]/div[2]/div[2]/div/div[1]")
+    PRODUCT_SIZE_SELECT = (By.CSS_SELECTOR, ".radio-item.regular.text-characteristic:not(.disabled)")
     PRODUCT_COUNT_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[3]")
     PRODUCT_COUNT_BLOCK_PLUS = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                           "/div[1]/div[2]/div[3]/div[2]/div[1]/div/div/button")

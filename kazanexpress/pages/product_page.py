@@ -1,6 +1,8 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 import random
+import pytest, time
+from selenium.webdriver.common.by import By
 
 
 # static method
@@ -74,7 +76,14 @@ class ProductPage(BasePage):
         print("PRICE NEW = " + str(price_new))
         actual_click_count = click_count + 1
         print("CLICK = " + str(actual_click_count))
+
         assert int(price_new) == int(price_old) * actual_click_count, "Incorrect final sum after adding count"
+
+    """Remember Price and Name of Product"""
+    def remember_name_price_of_product(self):
+        name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
+        price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
+        return str(name), str(price)
 
     """Add to basket"""
     def click_to_add_to_basket(self):
@@ -83,11 +92,4 @@ class ProductPage(BasePage):
             add_button.click()
         else:
             assert "Can't find add to basket button, try to check that blocks are filled!"
-
-    """Remember Price and Name of Product"""
-    def remember_name_price_of_product(self):
-        name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        return name, price
-
 

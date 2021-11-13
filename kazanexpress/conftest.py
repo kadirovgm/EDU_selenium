@@ -31,7 +31,7 @@ def browser(request):
         print("\nStart chrome browser for test..")
         browser = webdriver.Chrome(options=options)
         browser.maximize_window()                   # maximize window
-        browser.implicitly_wait(5)                  # implicitly wait
+        browser.implicitly_wait(3)                  # implicitly wait
     elif browser_name == "firefox":
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
