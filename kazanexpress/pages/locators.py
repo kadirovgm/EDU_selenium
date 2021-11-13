@@ -23,6 +23,9 @@ class MainPageLocators:
                                      "div.product-card-image.noselect > button > img")
     FAV_ICON_SELECTED = (By.CSS_SELECTOR, ".noselect.product-card-like.liked")
     PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]/a/div/div[2]/div[1]/span")
+    PRODUCT_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div"
+                               "/div/div[1]/a/div/div[2]/div[4]/div/span[1]/span")
+    PRODUCT_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/section/div/div/div[1]")
 
 
 
@@ -43,6 +46,7 @@ class FavoritesPageLocators:
     FAVORITE_EMPTY_MES_ADD = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div/div/p")
     FAVORITE_PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]"
                                        "/div/div/div[1]/a/div/div[2]/div[1]/span")
+    FAVORITE_ICON = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/a/div/div[1]/button")
 
 
 class BasketPageLocators:
@@ -51,6 +55,8 @@ class BasketPageLocators:
     BASKET_EMPTY_MES_ADD = (By.CSS_SELECTOR, ".slightly.transparent.regular.hug")
 
 
-
 class ProductPageLocators:
-    ...
+    PRODUCT = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]")
+    PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/h1")
+    PRODUCT_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
+                               "/div[1]/div[2]/div[4]/div[2]/div[1]/span")

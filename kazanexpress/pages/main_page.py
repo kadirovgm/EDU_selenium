@@ -14,7 +14,16 @@ class MainPage(BasePage):
     def should_be_red_fav_icon(self):
         assert self.is_element_present(*MainPageLocators.FAV_ICON_SELECTED), "Probably Element isn't in favorites"
 
-    def remember_favorite_product_name(self):
+    def remember_product_name(self):
         product_name = self.browser.find_element(*MainPageLocators.PRODUCT_NAME)
         product_name_text = product_name.text
         return product_name_text
+
+    def remember_product_price(self):
+        product_price = self.browser.find_element(*MainPageLocators.PRODUCT_PRICE)
+        product_price_text = product_price.text
+        return product_price_text
+
+    def click_to_product(self):
+        product_elm = self.browser.find_element(*MainPageLocators.PRODUCT_ELM)
+        product_elm.click()

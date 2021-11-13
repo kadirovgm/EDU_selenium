@@ -41,7 +41,7 @@ class LoginPage(BasePage):
         input_password = self.browser.find_element(*LoginPageLocators.LOGIN_PASSWORD)
         input_password.send_keys(password)
         button_login = self.browser.find_element(*LoginPageLocators.LOGIN_BUTTON)
-        button_login.click(), " probably unauthorised user"
+        button_login.click()
 
     def should_be_authorized_user(self):
         assert "Rushat" == self.browser.find_element(*BasePageLocators.USER_NAME_APPEARED).text, \

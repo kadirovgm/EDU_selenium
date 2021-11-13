@@ -6,9 +6,12 @@ import time
 
 class FavoritesPage(BasePage):
 
+    def click_to_remove_from_favorites(self):
+        favorite_icon = self.browser.find_element(*FavoritesPageLocators.FAVORITE_ICON)
+        favorite_icon.click()
+
     # Expectation that there is nothing in favorites (waiting for 4 sek)
     def should_be_empty_favorites(self):
-        self.go_to_favorites()
         self.should_be_no_element()
         self.should_present_message_no_favorites()
 
