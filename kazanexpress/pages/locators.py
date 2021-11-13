@@ -17,6 +17,9 @@ class BasePageLocators:
 
 
 class MainPageLocators:
+    SEARCH = (By.XPATH, "/html/body/main/div[2]/header/div[1]/div[1]/div[2]/div/div/input")
+    SEARCH_BUTTON = (By.XPATH, "/html/body/main/div[2]/header/div[1]/div[1]/div[2]/button")
+    SEARCHED_ELM = (By.XPATH, "/html/body/main/div[2]/div[2]/div/div[2]/div/div/div[1]")
     FAV_ICON_ELM = (By.CSS_SELECTOR, "#section-express-content > div > div:nth-child(1) > a > div > "
                                      "div.product-card-image.noselect > button > img")
     FAV_ICON_SELECTED = (By.CSS_SELECTOR, ".noselect.product-card-like.liked")
@@ -61,3 +64,14 @@ class ProductPageLocators:
     PRODUCT_NAME = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/h1")
     PRODUCT_PRICE = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
                                "/div[1]/div[2]/div[4]/div[2]/div[1]/span")
+    PRODUCT_COLOR_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div")
+    PRODUCT_COLOR_SELECT = (By.XPATH, "/html/body/main/div[2]/div[2]"
+                                      "/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]")
+    PRODUCT_COLOR_SELECT_CHECK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
+                                            "/div[1]/div[2]/div[2]/div/div[1]/span[2]")
+    PRODUCT_COUNT_BLOCK = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div[3]")
+    PRODUCT_COUNT_BLOCK_PLUS = (By.XPATH, "/html/body/main/div[2]/div[2]/div[1]/div[2]/div[2]"
+                                          "/div[1]/div[2]/div[3]/div[2]/div[1]/div/div/button")
+
+
+

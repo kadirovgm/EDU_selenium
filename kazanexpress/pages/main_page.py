@@ -31,3 +31,19 @@ class MainPage(BasePage):
     def click_to_product(self):
         product_elm = self.browser.find_element(*MainPageLocators.PRODUCT_ELM)
         product_elm.click()
+
+    """Search and select first element"""
+    def search_and_select(self, elm):
+        self.search_by(elm)
+        self.select_after_search()
+
+    def search_by(self, searching_elm):
+        search_field = self.browser.find_element(*MainPageLocators.SEARCH)
+        search_field.send_keys(searching_elm)
+        submit_search_button = self.browser.find_element(*MainPageLocators.SEARCH_BUTTON)
+        submit_search_button.click()
+
+    def select_after_search(self):
+        select_searched_product = self.browser.find_element(*MainPageLocators.SEARCHED_ELM)
+        select_searched_product.click()
+

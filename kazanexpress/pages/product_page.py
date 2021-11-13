@@ -1,5 +1,14 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+import random
+
+
+# static method
+def click_to_plus_button(count):
+    n = random.randint(1, 10)
+    for i in range(n):
+        count.click()
+    return n
 
 
 class ProductPage(BasePage):
@@ -27,5 +36,33 @@ class ProductPage(BasePage):
         print("Product price is: " + str(product_price_in_products_text))
         assert product_price_in_products_text == price, "Incorrect price of chosen produce!"
 
+    """Checking for color block!"""
+    def is_color_block_exist(self):
+        if self.is_element_present(*ProductPageLocators.PRODUCT_COLOR_BLOCK):
+            print("Color block exist!")
+            select_color = self.browser.find_element(*ProductPageLocators.PRODUCT_COLOR_SELECT)
+            select_color.click()
+            assert self.is_element_present(*ProductPageLocators.PRODUCT_COLOR_SELECT_CHECK), "Color can't be selected!"
+        else:
+            print("Color block does not exist!")
 
+    """Checking for count block"""
+    def is_count_block_exist(self):
+        if self.is_element_present(*ProductPageLocators.PRODUCT_COUNT_BLOCK):
+            print("Count block exist!")
+            self.checking_for_correct_counting()
+        else:
+            print("Count block does not exist")
+            assert "Count block should exist!"
 
+    # delete rubles next to sum, and remove probels
+    def checking_for_correct_counting(self):
+        price_old = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text[:-2].replace(' ', '')
+        add_count = self.browser.find_element(*ProductPageLocators.PRODUCT_COUNT_BLOCK_PLUS)
+        click_count = click_to_plus_button(add_count)
+        print("CLICK = " + str(click_count))
+        price_new = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text[:-2].replace(' ', '')
+        print("PRICE OLD = " + str(price_old))
+        print("PRICE NEW = " + str(price_new))
+        actual_click_count = click_count + 1
+        assert int(price_new) == int(price_old) * actual_click_count, "Incorrect final sum after adding count"
