@@ -9,8 +9,7 @@ from pages.product_page import ProductPage
 LINK_MAIN_PAGE = "https://kazanexpress.ru/"
 
 
-@pytest.mark.need_review
-@pytest.mark.skip
+@pytest.mark.e2e_1
 class TestGuestCanUseHeader:
 
     def test_guest_can_login(self, browser):
@@ -36,8 +35,7 @@ class TestGuestCanUseHeader:
         basket_page.should_be_empty_basket()                            # 3. Go to basket, chek it for empty
 
 
-@pytest.mark.need_review
-@pytest.mark.skip
+@pytest.mark.e2e_2
 class TestUserAddToFavoritesFromMainPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
@@ -57,8 +55,7 @@ class TestUserAddToFavoritesFromMainPage:
         page_favorites.should_be_empty_favorites()                          # 7. Checking for empty favorites
 
 
-@pytest.mark.need_review
-@pytest.mark.skip
+@pytest.mark.e2e_3
 class TestUserCanSeeLastSeeingProduct:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
