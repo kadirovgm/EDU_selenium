@@ -25,7 +25,6 @@ class TestUserCanAddToBasketFromMainPage:
         page_main = MainPage(browser, browser.current_url)              # 1. POM main_page
         page_main.search_and_select(search_elm)                         # 2. Search elm and select
         time.sleep(1)
-        self.browser.implicitly_wait(3)
         page_product = ProductPage(browser, browser.current_url)        # 3. POM product_page
         page_product.is_color_block_exist()                             # 4. Checking for "color" block
         page_product.is_size_block_exist()                              # 5. Checking for size block
