@@ -10,7 +10,7 @@ from pages.product_page import ProductPage
 LINK_MAIN_PAGE = "https://kazanexpress.ru/"
 
 
-@pytest.mark.need_review_add_to_basket
+@pytest.mark.e2e_4
 class TestUserCanAddToBasketFromMainPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):

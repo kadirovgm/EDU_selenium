@@ -14,7 +14,7 @@ class LoginPage(BasePage):
         self.go_to_login_page()
         self.should_be_login_page()
         self.fill_register_form(email, password)
-        self.should_be_authorized_user()
+        # self.should_be_authorized_user()
 
     def should_be_login_url(self):
         assert self.browser.current_url in self.url, "Incorrect URL!"
