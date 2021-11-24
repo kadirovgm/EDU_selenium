@@ -49,7 +49,7 @@
     - Marking - маркировка
     - XFail - ожидаемо падающие тесты
     - Parametrize
-    - Conftest.py
+    - Conftest.py file
     
 - POM (Page Object Model)
     - Code style
