@@ -13,7 +13,6 @@
 7. http://barancev.github.io/what-is-path-env-var/ — что за PATH переменная? 
 
 ### Ожидания в Selenium WebDriver
-
 1. https://docs.seleniumhq.org/docs/04_webdriver_advanced.jsp
 2. https://selenium-python.readthedocs.io/waits.html
 3. https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.support.expected_condition...﻿

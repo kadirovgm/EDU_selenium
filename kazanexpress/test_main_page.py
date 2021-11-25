@@ -80,4 +80,5 @@ class TestUserCanSeeLastSeeingProduct:
     # def test_user_can_see_last_product_in_basket(self, browser):
     #     ...
 
+    # unittests learning path
 

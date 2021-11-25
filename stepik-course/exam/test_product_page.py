@@ -8,6 +8,7 @@ import pytest
 import time
 
 
+# REVIEW
 @pytest.mark.skip
 # TC1. Guest can add product to basket
 @pytest.mark.parametrize('promo_offer',
@@ -75,6 +76,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.go_to_login_page()      # base_page                    # 3. Can go to login page
 
 
+# REVIEW
 @pytest.mark.login
 class TestUserAddToBasketFromProductPage:
 

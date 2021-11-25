@@ -7,6 +7,7 @@ import time
 
 LINK_MAIN_PAGE = "http://selenium1py.pythonanywhere.com/"
 
+# REVIEW
 @pytest.mark.skip
 # TC1. Should be empty basket for guest from main page
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
@@ -20,6 +21,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     # page.should_have_basket_empty_message()
 
 
+# REVIEW
 @pytest.mark.skip
 @pytest.mark.login_guest
 # TC2. Common tests. Login from main page
