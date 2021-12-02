@@ -53,7 +53,8 @@
     
 - POM (Page Object Model)
     - Code style
-    
+
+Attestation - well done
 
 
     
